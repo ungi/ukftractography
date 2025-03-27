@@ -45,14 +45,17 @@ is more of a test than anything).
     cd <build-dir>
     cmake <path-to-source>
     make
-    make test
+    cd UKFTractography-build/UKFTractography
+    ctest
 
 #### b) Build with Slicer4
 
     cd <build-dir>
     cmake -DSlicer_DIR=<path-to-Slicer4-Superbuild>/Slicer-build <path-to-source>
     make
-    make test
+    cd UKFTractography-build/UKFTractography
+    ctest
+
 
 #### c) Build via Slicer ExtensionIndex build
 
