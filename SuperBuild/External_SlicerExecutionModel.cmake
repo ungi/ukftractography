@@ -40,7 +40,7 @@ if(NOT DEFINED SlicerExecutionModel_DIR AND NOT ${CMAKE_PROJECT_NAME}_USE_SYSTEM
 
   ExternalProject_SetIfNotDefined(
     ${CMAKE_PROJECT_NAME}_${proj}_GIT_TAG
-    "795e6717600d5241a6fe0e2e48dee741c3fd0918"
+    "0e28e41aa167b477bc4889725ca08157c152e584"
     QUIET
     )
 
