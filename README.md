@@ -1,6 +1,15 @@
 UKF TRACTOGRAPHY
 ================
 
+![Static Badge](https://img.shields.io/badge/RHEL-9.5-tamarind)
+![Static Badge](https://img.shields.io/badge/GCC-11.5.0-yellow)
+![Static Badge](https://img.shields.io/badge/Cmake-3.29.1-red)
+
+![Static Badge](https://img.shields.io/badge/VTK-9.4.1-green)
+![Static Badge](https://img.shields.io/badge/ITK-5.4.2-skyblue)
+![Static Badge](https://img.shields.io/badge/Boost-1.87.0-magenta)
+![Static Badge](https://img.shields.io/badge/Eigen-3.4.0-pink)
+
 About
 -----
 
