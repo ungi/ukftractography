@@ -303,7 +303,7 @@
       <name>freeWater</name>
       <longflag>freeWater</longflag>
       <label>Tensor Model: Estimate term for free water</label>
-      <description>Adds a term for free water diffusion to the model. The free water model is a tensor with all 3 eigenvalues equal to the diffusivity of free water (0.003). To output the free water fraction, make sure to use the "save free water" parameter.</description>
+      <description>Adds a term for free water diffusion to the model. The free water model is a tensor with all 3 eigenvalues equal to the diffusivity of free water (0.003). To output the free water fraction, make sure to use the --recordFreeWater flag.</description>
       <default>false</default>
     </boolean>
 
@@ -327,7 +327,7 @@
       <name>recordFreeWater</name>
       <longflag>recordFreeWater</longflag>
       <label>Output: Save free water fraction</label>
-      <description>Record output from tensor plus free water model: Save the fraction of free water. Attaches field 'FreeWater' to fiber.</description>
+      <description>Record output from tensor plus free water model: Save the fraction of free water. Attaches field 'FreeWater' to fiber. To use this flag, --freeWater flag must also be used.</description>
       <default>false</default>
     </boolean>
 
