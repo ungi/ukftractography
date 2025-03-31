@@ -1,8 +1,6 @@
 UKF TRACTOGRAPHY
 ================
 
-[![Ubuntu 20.04 Build](https://github.com/pnlbwh/ukftractography/actions/workflows/build-test.yml/badge.svg?branch=master)](https://github.com/pnlbwh/ukftractography/actions/workflows/build-test.yml?query=branch%3Amaster)
-
 About
 -----
 
@@ -18,8 +16,8 @@ identical) and the other one uses a full tensor representation.
 
 __Authors__:
 Yogesh Rathi (yogesh@bwh.harvard.edu), Stefan Lienhard, Yinpeng Li, Martin
-Styner, Ipek Oguz, Yundi Shi, Christian Baumgartner (c.f.baumgartner@gmail.com)
-Ryan Eckbo
+Styner, Ipek Oguz, Yundi Shi, Christian Baumgartner (c.f.baumgartner@gmail.com),
+Ryan Eckbo, Tashrif Billah, Dheshan Mohandass
 
 For references and further documentation, please see the [Slicer module homepage](https://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Modules/UKFTractography).
 
