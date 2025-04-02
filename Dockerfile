@@ -7,6 +7,7 @@ WORKDIR /home/pnlbwh
 ENV HOME=/home/pnlbwh
 ENV USER="root"
 ENV LANG=en_US.UTF-8
+ENV CMAKE=3.31.0
 
 # install required libraries
 RUN ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime && \
@@ -15,9 +16,9 @@ RUN ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime && \
     yum clean all && rm -rf /var/cache/yum
 
 # install cmake
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.31.0/cmake-3.31.0.tar.gz && \
-    tar -xzf cmake-3.31.0.tar.gz && \
-    cd cmake-3.31.0 && mkdir build && cd build && \
+RUN wget https://github.com/Kitware/CMake/releases/download/v${CMAKE}/cmake-${CMAKE}.tar.gz && \
+    tar -xzf cmake-${CMAKE}.tar.gz && \
+    cd cmake-${CMAKE} && mkdir build && cd build && \
     ../bootstrap --parallel=4 && make -j4
 
 # build ukftractography
