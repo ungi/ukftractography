@@ -33,8 +33,23 @@ For references and further documentation, please see the [Slicer module homepage
 Installation
 ------------
 
+### 1. Container
 
-### 1. From Source
+In April 2025, we revamped *ukftractography* installation infrastructure and made a Docker container to facilitate future
+installation and usage. The container can be pulled from Docker Hub:
+
+    docker pull tbillah/ukftractography:latest
+
+Then, it can be used as:
+
+    docker run --rm -v /local/path/to/data:/remote/data/ ukftractography \
+    --dwiFile /remote/data/dwi.nhdr --maskFile /remote/data/mask.nhdr --tracts /remote/data/tracts.vtk ...
+
+As you see, the mandatory step is to mount local data into the Docker container first.
+Then, you can reference the mounted data to construct ukftractography arguments e.g.
+`--dwiFile`, `--maskFile`, etc.
+
+### 2. From Source
 
 Checkout from github:
 
@@ -74,7 +89,7 @@ Notes:
 
 * It may be helpful to [test the exension upload](https://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Developers/Build_ExtensionsIndex#Extension_build.2C_test.2C_package_and_upload_using_.60ExperimentalUpload.60_target) using your API key.
 
-### 2. As a Slicer 4 Extension
+### 3. As a Slicer 4 Extension
 
 Navigate to the Slicer Extension Manager and download `UKF Tractography` to
 install it as a Slicer 4 module.
