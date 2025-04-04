@@ -43,7 +43,8 @@ installation and usage. The container can be pulled from Docker Hub:
 Then, it can be used as:
 
     docker run --rm -v /local/path/to/data:/remote/data/ ukftractography \
-    --dwiFile /remote/data/dwi.nhdr --maskFile /remote/data/mask.nhdr --tracts /remote/data/tracts.vtk ...
+    --dwiFile /remote/data/dwi.nhdr --maskFile /remote/data/mask.nhdr \
+    --tracts /remote/data/tracts.vtk ...
 
 As you see, the mandatory step is to mount local data into the Docker container first.
 Then, you can reference the mounted data to construct ukftractography arguments e.g.
