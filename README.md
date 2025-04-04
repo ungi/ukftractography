@@ -50,6 +50,11 @@ As you see, the mandatory step is to mount local data into the Docker container 
 Then, you can reference the mounted data to construct ukftractography arguments e.g.
 `--dwiFile`, `--maskFile`, etc.
 
+However, to simply shell into the container, use:
+
+    docker run --rm -ti --entrypoint /bin/bash ukftractography
+
+
 ### 2. From Source
 
 Checkout from github:
