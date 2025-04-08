@@ -61,9 +61,8 @@ Checkout from github:
 
     git clone https://github.com/pnlbwh/ukftractography.git
 
-There are 3 ways to build this project from source, as a stand alone
-superbuild, against a Slicer 5 build, and as a Slicer 5 extension build (which
-is more of a test than anything).
+There are 3 ways to build this project from source. Way (a) is tested for every pull request to this repository.
+Way (b) is rarely tested. Way (c) is done every night that can be checked at https://slicer.cdash.org/projects.
 
 
 #### a) Standalone Superbuild
