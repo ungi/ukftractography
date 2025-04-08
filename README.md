@@ -87,7 +87,7 @@ is more of a test than anything).
 
 #### c) Build via Slicer ExtensionIndex build
 
-Create local extension index following [these instructions](https://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Developers/Build_ExtensionsIndex), containing at least `UKFTractography.s5ext` and `SlicerDMRI.s5ext` (required runtime dependency).
+Create local extension index following [these instructions](https://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Developers/Build_ExtensionsIndex), containing at least `UKFTractography.s4ext` and `SlicerDMRI.s4ext` (required runtime dependency).
 
 Notes:
 
