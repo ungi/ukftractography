@@ -115,8 +115,8 @@ In order to see all options run.
 In the source directory of the project you will find a shell script called [examples/sample_run.sh](examples/sample_run.sh).
 It should give you an idea of what a function call could look like. 
 
-Files dataset_Mask.nrrd and seeds_full_cc.nrrd in Input folder are mask and seed files of subject 100307
-in hcp dataset, download the subject's preprocessed diffusion MRI data from https://db.humanconnectome.org/ 
+Files `dataset_Mask.nrrd` and `seeds_full_cc.nrrd` in [Input](UKFTractography/Data/Input/) folder are mask and seed files of subject 100307
+in hcp dataset, download the subject's preprocessed diffusion MRI data from https://db.humanconnectome.org/.
 
 ### 2. As Slicer 5 module
 
