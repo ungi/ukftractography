@@ -85,13 +85,13 @@ Way (b) is rarely tested. Way (c) is done every night that can be checked at htt
 
 #### c) Build via Slicer ExtensionIndex build
 
-Create local extension index following [these instructions](https://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Developers/Build_ExtensionsIndex), containing at least `UKFTractography.s4ext` and `SlicerDMRI.s4ext` (required runtime dependency).
+Create local extension index following [these instructions](https://slicer.readthedocs.io/en/latest/developer_guide/extensions.html#extensions-build-system), containing at least `UKFTractography.s4ext` and `SlicerDMRI.s4ext` (required runtime dependency).
 
 Notes:
 
 * To manually test the `UKF Tractography` Slicer module, start Slicer using the launcher named `SlicerWithSlicerDMRI` available in `/path/to/SlicerDMRI-build/inner-build` directory. This ensure that the SlicerDMRI modules are loaded and that the required MRML diffusion nodes are registered (i.e vtkMRMLFiberBundleNode).
 
-* It may be helpful to [test the exension upload](https://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Developers/Build_ExtensionsIndex#Extension_build.2C_test.2C_package_and_upload_using_.60ExperimentalUpload.60_target) using your API key.
+* It may be helpful to [test the exension upload](https://slicer.readthedocs.io/en/latest/developer_guide/extensions.html#build-test-package-and-upload-to-extensions-server) using your API key.
 
 ### 3. As a Slicer 5 Extension
 
