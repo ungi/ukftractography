@@ -67,13 +67,12 @@ Way (b) is rarely tested. Way (c) is done every night that can be checked at htt
 
 #### a) Standalone Superbuild
 
-**To use previous version of unscented Kalman filter rename unscented_kalman_filter_previous.cc to unscented_kalman_filter.cc **
-
     cd <build-dir>
     cmake <path-to-source>
     make
     cd UKFTractography-build/UKFTractography
     ctest
+
 
 #### b) Build with Slicer5
 
