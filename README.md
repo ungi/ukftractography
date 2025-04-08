@@ -33,15 +33,36 @@ For references and further documentation, please see the [Slicer module homepage
 Installation
 ------------
 
+### 1. Container
 
-### 1. From Source
+In April 2025, we revamped *ukftractography* installation infrastructure and made a Docker container to facilitate future
+installation and usage. The container can be pulled from Docker Hub:
+
+    docker pull tbillah/ukftractography:latest
+
+Then, it can be used as:
+
+    docker run --rm -v /local/path/to/data:/remote/data/ ukftractography \
+    --dwiFile /remote/data/dwi.nhdr --maskFile /remote/data/mask.nhdr \
+    --tracts /remote/data/tracts.vtk ...
+
+As you see, the mandatory step is to mount local data into the Docker container first.
+Then, you can reference the mounted data to construct ukftractography arguments e.g.
+`--dwiFile`, `--maskFile`, etc.
+
+However, to simply shell into the container, use:
+
+    docker run --rm -ti --entrypoint /bin/bash ukftractography
+
+
+### 2. From Source
 
 Checkout from github:
 
     git clone https://github.com/pnlbwh/ukftractography.git
 
 There are 3 ways to build this project from source, as a stand alone
-superbuild, against a Slicer 4 build, and as a Slicer 4 extension build (which
+superbuild, against a Slicer 5 build, and as a Slicer 5 extension build (which
 is more of a test than anything).
 
 
@@ -55,10 +76,10 @@ is more of a test than anything).
     cd UKFTractography-build/UKFTractography
     ctest
 
-#### b) Build with Slicer4
+#### b) Build with Slicer5
 
     cd <build-dir>
-    cmake -DSlicer_DIR=<path-to-Slicer4-Superbuild>/Slicer-build <path-to-source>
+    cmake -DSlicer_DIR=<path-to-Slicer5-Superbuild>/Slicer-build <path-to-source>
     make
     cd UKFTractography-build/UKFTractography
     ctest
@@ -74,10 +95,10 @@ Notes:
 
 * It may be helpful to [test the exension upload](https://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Developers/Build_ExtensionsIndex#Extension_build.2C_test.2C_package_and_upload_using_.60ExperimentalUpload.60_target) using your API key.
 
-### 2. As a Slicer 4 Extension
+### 3. As a Slicer 5 Extension
 
 Navigate to the Slicer Extension Manager and download `UKF Tractography` to
-install it as a Slicer 4 module.
+install it as a Slicer 5 module.
 
 
 Basic Usage
@@ -99,10 +120,10 @@ It should give you an idea of what a function call could look like.
 Files dataset_Mask.nrrd and seeds_full_cc.nrrd in Input folder are mask and seed files of subject 100307
 in hcp dataset, download the subject's preprocessed diffusion MRI data from https://db.humanconnectome.org/ 
 
-### 2. As Slicer 4 module
+### 2. As Slicer 5 module
 
 Navigate to the Slicer Extension Manager and download `UKF Tractography` to
-install it as a Slicer 4 module.  There will be 3 modules under
+install it as a Slicer 5 module.  There will be 3 modules under
 `Diffusion-->Tractography`: `UKF Tractography`, `vtk2mask`, and `vtkFilter`.
 
 
