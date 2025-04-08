@@ -133,4 +133,8 @@ This explains why the [2T_FW ctest](https://github.com/pnlbwh/ukftractography/pu
 
 2. Several steps in the SuperBuild process download additional git repositories as CMake external projects. By default `UKFTractography_USE_GIT_PROTOCOL:BOOL=OFF` indicates to use `https://` instead of `git://`. This default should work behind most firewalls (the git protocol uses port 9418: if this is blocked by your firewall the build will fail). If download problems are encountered, please [file an issue](https://github.com/pnlbwh/ukftractography/issues/new).
 
-3. 
+3. In April 2025, there were several updates to *ukftractography* installation infrastructure. The updates
+   were adequately tested on RHEL 9 OS. However, it was brought to our attention that, upon installing
+   the current UKFTractography from Slicer Extension Manager in Apple Silicon Macs, Slicer-5 crashes when
+   UKFTractography module is started. The solution is believed to be an OS X update: macOS 14.6.1 --> Sequoia 15.4.
+   OS X is expected to ask the user to perform the update to fix this problem. So feel free to do the update.
