@@ -61,20 +61,18 @@ Checkout from github:
 
     git clone https://github.com/pnlbwh/ukftractography.git
 
-There are 3 ways to build this project from source, as a stand alone
-superbuild, against a Slicer 5 build, and as a Slicer 5 extension build (which
-is more of a test than anything).
+There are 3 ways to build this project from source. Way (a) is tested for every pull request to this repository.
+Way (b) is rarely tested. Way (c) is done every night that can be checked at https://slicer.cdash.org/projects.
 
 
 #### a) Standalone Superbuild
-
-**To use previous version of unscented Kalman filter rename unscented_kalman_filter_previous.cc to unscented_kalman_filter.cc **
 
     cd <build-dir>
     cmake <path-to-source>
     make
     cd UKFTractography-build/UKFTractography
     ctest
+
 
 #### b) Build with Slicer5
 
@@ -87,13 +85,13 @@ is more of a test than anything).
 
 #### c) Build via Slicer ExtensionIndex build
 
-Create local extension index following [these instructions](https://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Developers/Build_ExtensionsIndex), containing at least `UKFTractography.s4ext` and `SlicerDMRI.s4ext` (required runtime dependency).
+Create local extension index following [these instructions](https://slicer.readthedocs.io/en/latest/developer_guide/extensions.html#extensions-build-system), containing at least `UKFTractography.s4ext` and `SlicerDMRI.s4ext` (required runtime dependency).
 
 Notes:
 
 * To manually test the `UKF Tractography` Slicer module, start Slicer using the launcher named `SlicerWithSlicerDMRI` available in `/path/to/SlicerDMRI-build/inner-build` directory. This ensure that the SlicerDMRI modules are loaded and that the required MRML diffusion nodes are registered (i.e vtkMRMLFiberBundleNode).
 
-* It may be helpful to [test the exension upload](https://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Developers/Build_ExtensionsIndex#Extension_build.2C_test.2C_package_and_upload_using_.60ExperimentalUpload.60_target) using your API key.
+* It may be helpful to [test the exension upload](https://slicer.readthedocs.io/en/latest/developer_guide/extensions.html#build-test-package-and-upload-to-extensions-server) using your API key.
 
 ### 3. As a Slicer 5 Extension
 
@@ -114,11 +112,11 @@ In order to see all options run.
 
     ./UKFTractography --help 
 
-In the source directory of the project you will find a shell script called 'sample_run.sh'
+In the source directory of the project you will find a shell script called [examples/sample_run.sh](examples/sample_run.sh).
 It should give you an idea of what a function call could look like. 
 
-Files dataset_Mask.nrrd and seeds_full_cc.nrrd in Input folder are mask and seed files of subject 100307
-in hcp dataset, download the subject's preprocessed diffusion MRI data from https://db.humanconnectome.org/ 
+Files `dataset_Mask.nrrd` and `seeds_full_cc.nrrd` in [Input](UKFTractography/Data/Input/) folder are mask and seed files of subject 100307
+in hcp dataset, download the subject's preprocessed diffusion MRI data from https://db.humanconnectome.org/.
 
 ### 2. As Slicer 5 module
 
@@ -130,7 +128,13 @@ install it as a Slicer 5 module.  There will be 3 modules under
 Notes
 -----
 
-On a Mac, there are rounding errors that affect the accuracy of 2T FW tracts.
-This explains why the 2T_FW ctest fails.
+1. There are rounding errors that affect the accuracy of 2T FW tracts.
+This explains why the [2T_FW ctest](https://github.com/pnlbwh/ukftractography/pull/169#issuecomment-2758623859) fails.
 
-Several steps in the SuperBuild process download additional git repositories as CMake external projects. By default `UKFTractography_USE_GIT_PROTOCOL:BOOL=OFF` indicates to use `https://` instead of `git://`. This default should work behind most firewalls (the git protocol uses port 9418: if this is blocked by your firewall the build will fail). If download problems are encountered, please [file an issue](https://github.com/pnlbwh/ukftractography/issues/new).
+2. Several steps in the SuperBuild process download additional git repositories as CMake external projects. By default `UKFTractography_USE_GIT_PROTOCOL:BOOL=OFF` indicates to use `https://` instead of `git://`. This default should work behind most firewalls (the git protocol uses port 9418: if this is blocked by your firewall the build will fail). If download problems are encountered, please [file an issue](https://github.com/pnlbwh/ukftractography/issues/new).
+
+3. In April 2025, there were several updates to *ukftractography* installation infrastructure. The updates
+   were adequately tested on RHEL 9 OS. However, it was brought to our attention that, upon installing
+   the current UKFTractography from Slicer Extension Manager in Apple Silicon Macs, Slicer-5 crashes when
+   UKFTractography module is started. The solution is believed to be an OS X update: macOS 14.6.1 --> Sequoia 15.4.
+   OS X is expected to ask the user to perform the update to fix this problem. So feel free to do the update.
